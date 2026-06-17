@@ -50,31 +50,37 @@ export default function ElectionControl() {
   }
 
   return (
-    <div className="space-y-4">
-      <h3 className="text-xl font-semibold">Election Control</h3>
-      <div className="flex flex-col gap-2">
+    <div className="space-y-6">
+      <div className="flex items-center gap-2 mb-2">
+        <div className="w-8 h-8 bg-blue-500/20 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+          <span className="text-white">⚙️</span>
+        </div>
+        <h3 className="text-xl font-bold tracking-tight text-white">Election Control</h3>
+      </div>
+
+      <div className="grid grid-cols-1 gap-3">
         <button 
           onClick={startRegistration} 
           disabled={loading}
-          className="bg-blue-600 text-white py-2 rounded font-medium hover:bg-blue-700 disabled:bg-gray-400"
+          className="flex items-center justify-center gap-2 bg-white text-blue-700 dark:bg-blue-500 dark:text-white py-3 rounded-xl font-black transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg disabled:opacity-50"
         >
-          Start Registration
+          <span>📝</span> Start Registration
         </button>
 
         <button 
           onClick={startElection} 
           disabled={loading}
-          className="bg-green-600 text-white py-2 rounded font-medium hover:bg-green-700 disabled:bg-gray-400"
+          className="flex items-center justify-center gap-2 bg-white text-emerald-700 dark:bg-emerald-500 dark:text-white py-3 rounded-xl font-black transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg disabled:opacity-50"
         >
-          Start Voting (60m)
+          <span>🗳️</span> Start Voting (60m)
         </button>
 
         <button 
           onClick={endElection} 
           disabled={loading}
-          className="bg-red-600 text-white py-2 rounded font-medium hover:bg-red-700 disabled:bg-gray-400"
+          className="flex items-center justify-center gap-2 bg-white text-rose-700 dark:bg-rose-500 dark:text-white py-3 rounded-xl font-black transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg disabled:opacity-50"
         >
-          End Election
+          <span>🛑</span> End Election
         </button>
       </div>
     </div>
